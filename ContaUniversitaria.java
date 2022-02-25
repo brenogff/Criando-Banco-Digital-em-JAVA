@@ -4,7 +4,6 @@ public class ContaUniversitaria extends Conta {
         super(cliente);
     }
     
-   @Override
    public void imprimirExtrato(){
     System.out.println("=== Extrato Conta Universitaria ===");
     super.imprimirInformacoesComuns();
