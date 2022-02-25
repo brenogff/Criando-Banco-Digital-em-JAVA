@@ -14,19 +14,19 @@ public abstract class Conta implements IConta{
         this.cliente = cliente;
     }
 
-    @Override
+    
     public void sacar(double valor){
         this.saldo = saldo - valor;
 
     }
 
-    @Override
+    
     public void depositar(double valor){
         this.saldo = saldo + valor;
 
     }
 
-    @Override
+    
     public void transferir(double valor, Conta contaDestino){
         this.sacar (valor);
         contaDestino.depositar (valor);
@@ -47,6 +47,8 @@ public abstract class Conta implements IConta{
         return saldo;
         
     } 
+
+    public abstract void imprimirExtrato();
 
     protected void imprimirInformacoesComuns(){
     System.out.println(String.format("Titular: %s", this.cliente.getNome()));

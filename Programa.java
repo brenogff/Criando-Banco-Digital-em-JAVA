@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Programa {
 
     public static void main(String[] args) {
@@ -18,11 +21,20 @@ public class Programa {
 
         cc.transferir(50, universitaria);
 
-        cc.imprimirExtrato();
-        poupanca.imprimirExtrato();
-        especial.imprimirExtrato();
-        universitaria.imprimirExtrato();
+        imprimir(cc, poupanca, especial, universitaria);
 
+    }
+
+    private static void imprimir(Conta cc, Conta poupanca, Conta especial, Conta universitaria) {
+        List<Conta> contas = new ArrayList<Conta>();
+        contas.add(cc);
+        contas.add(poupanca);
+        contas.add(especial);
+        contas.add(universitaria);
+
+        for (Conta conta : contas) {
+            conta.imprimirExtrato();
+        }
     }
     
 }
